@@ -1,9 +1,1 @@
-{
-	"materias": [
-		"portugues",
-		"portugues"
-	],
-	"professores": [
-		{ "nome": "Thyago Salva", "materia1": null, "materia2": null, "materia3": null }
-	]
-}
+{"materias":["Matematica","Portugues"],"professores":[{"nome":"Thyago Salva","materia1":null,"materia2":null,"materia3":null}]}
