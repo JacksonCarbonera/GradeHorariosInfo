@@ -1,4 +1,21 @@
 {
-	"materias": [],
-	"professores": []
+	"materias": [
+		"Matemática",
+		"Literatura",
+		"Portugues",
+		"Ingles",
+		"Algorítimos",
+		"Programação Web",
+		"Introdução a Computação"
+	],
+	"professores": [
+		{ "nome": "Thyago Salvá", "materia1": "Algorítimos", "materia2": "Programação Web", "materia3": "" },
+		{ "nome": "Ivan Prá", "materia1": "Introdução a Computação", "materia2": null, "materia3": null },
+		{ "nome": "Alex da Silva", "materia1": "Matemática", "materia2": null, "materia3": null },
+		{ "nome": "Vagner Rodrigues", "materia1": "Matemática", "materia2": null, "materia3": null },
+		{ "nome": "Roselaine Neves Machado", "materia1": "Matemática", "materia2": null, "materia3": null },
+		{ "nome": "Cassinara Teixeira", "materia1": "Matemática", "materia2": null, "materia3": null },
+		{ "nome": "Lucas De Oliveira Contiero", "materia1": "Matemática", "materia2": null, "materia3": null },
+		{ "nome": "Felipe Luy Valério", "materia1": "Matemática", "materia2": null, "materia3": null }
+	]
 }

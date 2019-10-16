@@ -6,7 +6,8 @@
  $arquivo_json = file_get_contents("professores.json");
  $decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
  echo "<form method='POST'><input type='text' name='nomeprofessor' placeholder='Nome do novo professor'>";
- echo "<select name='materia'>";
+ echo "<select name='materia1'>
+ <option value=null></option>";
 
  for ($i=0; $i < count($decodifica_json["materias"]) ; $i++) { 
      echo "<option value='{$decodifica_json['materias'][$i]}'> {$decodifica_json['materias'][$i]}</option>";
@@ -14,12 +15,14 @@
  echo "</select>";
  
  echo "<input onchange='checaMaisdeUm()' type='checkbox' id='mais2'/>";
-echo "<select id='m2' name='materia' disabled>";
+echo "<select id='m2' name='materia2' disabled>
+<option value=null></option>";
 for ($i=0; $i < count($decodifica_json["materias"]) ; $i++) { 
     echo "<option value='{$decodifica_json['materias'][$i]}'> {$decodifica_json['materias'][$i]}</option>";
 }
 echo "</select>";
-echo "<select id='m3' name='materia' disabled>";
+echo "<select id='m3' name='materia3' disabled>
+<option value=null></option>";
 for ($i=0; $i < count($decodifica_json["materias"]) ; $i++) {  
     echo "<option value='{$decodifica_json['materias'][$i]}'> {$decodifica_json['materias'][$i]}</option>";
 }
