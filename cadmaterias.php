@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+<?php 
+ include 'navmenu.php';
+?>
 <form method="POST">
 <select name="curso">
 			<option value="INFO1">INFO1</option>
@@ -25,25 +28,32 @@
 			<option value="MEIO2" disabled></option>
 			<option value="MEIO3" disabled></option>
 		</select>
-		<input type="text" placeholder="Professor" name="professor"/>
-		<input type="text" placeholder="Materia" name="materia"/>
+		<select name="professor">
+		<?php 
+		$arquivo_json = file_get_contents("professores.json");
+		$decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
+		for ($i=0; $i < count($decodifica_json["professores"]); $i++) { 
+			echo "<option value='{$decodifica_json['professores'][$i]['nome']}'>{$decodifica_json['professores'][$i]['nome']}</option>";
+		}
+		echo "</select>
+		<select name='materia'>";
+		for ($i=0; $i < count($decodifica_json["professores"]); $i++) { 
+			echo "<option value='{$decodifica_json['materias'][$i]}'>{$decodifica_json['materias'][$i]}</option>";
+		}
+		?>
+		</select>
 		<input type="text" placeholder="carga horaria" name="ch"/>
 		<button type="submit">submit</button></form>
 </body>
 </html>
 <?php
-			//0 gerais
-		    //1 Agropecuaria
-		    //2 Meio Ambiente
-		    //3 Informatica
-		    //4 Enologia
                     if (!!$_POST) {
                         $dadosFormulario = array(
                                 "professor" => $_POST["professor"],
                                 "materia" => $_POST["materia"],
                                 "ch" => $_POST["ch"]
                         );
-                        $arquivo_json = file_get_contents("bloqueio.json");
+                        $arquivo_json = file_get_contents("disciplinar.json");
         				$decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
                         array_push($decodifica_json[$_POST["curso"]]["materias"],$dadosFormulario);
   						
@@ -51,6 +61,6 @@
                         // // var_dump($decodifica_json[0]["economia"]);
                         // // echo '</pre>';
                         $arquivo_json_alterado = json_encode($decodifica_json,JSON_UNESCAPED_UNICODE);
-                        file_put_contents('bloqueio.json', $arquivo_json_alterado);
+                        file_put_contents('disciplinar.json', $arquivo_json_alterado);
                     }
                     ?>

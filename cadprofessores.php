@@ -1,4 +1,8 @@
 <?php 
+ include 'navmenu.php';
+?>
+<?php 
+
  $arquivo_json = file_get_contents("professores.json");
  $decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
  echo "<form method='POST'><input type='text' name='nomeprofessor' placeholder='Nome do novo professor'>";
