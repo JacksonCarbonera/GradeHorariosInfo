@@ -33,11 +33,11 @@
 		$arquivo_json = file_get_contents("professores.json");
 		$decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
 		for ($i=0; $i < count($decodifica_json["professores"]); $i++) { 
-			echo "<option value='{$decodifica_json['professores'][$i]['nome']}'>{$decodifica_json['professores'][$i]['nome']}</option>";
+			echo "<option value='{$decodifica_json['professores']['c'.$i]['nome']}'>{$decodifica_json['professores']['c'.$i]['nome']}</option>";
 		}
 		echo "</select>
 		<select name='materia'>";
-		for ($i=0; $i < count($decodifica_json["professores"]); $i++) { 
+		for ($i=0; $i < count($decodifica_json["materias"]); $i++) { 
 			echo "<option value='{$decodifica_json['materias'][$i]}'>{$decodifica_json['materias'][$i]}</option>";
 		}
 		?>
@@ -48,18 +48,25 @@
 </html>
 <?php
                     if (!!$_POST) {
+						$arquivo_json = file_get_contents("disciplinar.json");
+						$decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
+						echo '<pre>';
+                        var_dump($decodifica_json["materias"]);
+                        echo '</pre>';
+						// $last= end($decodifica_json["materias"]);
+						// $codigo = $last["codigo"];
+						// $codigo++;
                         $dadosFormulario = array(
+								"codigo"=> $codigo,
                                 "professor" => $_POST["professor"],
                                 "materia" => $_POST["materia"],
                                 "ch" => $_POST["ch"]
                         );
-                        $arquivo_json = file_get_contents("disciplinar.json");
-        				$decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
                         array_push($decodifica_json[$_POST["curso"]]["materias"],$dadosFormulario);
   						
-                        // // echo '<pre>';
-                        // // var_dump($decodifica_json[0]["economia"]);
-                        // // echo '</pre>';
+                        // echo '<pre>';
+                        // var_dump($decodifica_json[0]["economia"]);
+                        // echo '</pre>';
                         $arquivo_json_alterado = json_encode($decodifica_json,JSON_UNESCAPED_UNICODE);
                         file_put_contents('disciplinar.json', $arquivo_json_alterado);
                     }

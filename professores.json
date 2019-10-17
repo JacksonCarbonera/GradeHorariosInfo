@@ -1,1 +1,82 @@
-{"materias":["Matemática","Literatura","Portugues","Ingles","Algorítimos","Programação Web","Introdução a Computação","Geografia"],"professores":{"c0":{"codigo":0,"nome":"Thyago Salva","materia1":"Programação Web","materia2":"Algoritimos","materia3":"null","bloqueios":{"segunda":[1],"terca":[],"quarta":[],"quinta":[1],"sexta":[10]}},"c1":{"codigo":1,"nome":"Ivan Prá","materia1":"Introdução a Computação","materia2":null,"materia3":null,"bloqueios":{"segunda":[4,5],"terca":[],"quarta":[1],"quinta":[],"sexta":[]}},"c2":{"codigo":2,"nome":"Alex da Silva","materia1":"Matemática","materia2":null,"materia3":null,"bloqueios":{"segunda":[],"terca":[],"quarta":[],"quinta":[],"sexta":[2,4,5,6,9,10]}},"c3":{"codigo":3,"nome":"Roselaine Neves Machado","materia1":"Matemática","materia2":null,"materia3":null,"bloqueios":{"segunda":[],"terca":[],"quarta":[],"quinta":[],"sexta":[]}}}}
+{
+	"materias": [
+		"Matemática",
+		"Literatura",
+		"Portugues",
+		"Ingles",
+		"Algorítimos",
+		"Programação Web",
+		"Introdução a Computação",
+		"Geografia"
+	],
+	"professores": {
+		"c0": {
+			"codigo": 0,
+			"nome": "Thyago Salva",
+			"materia1": "Programação Web",
+			"materia2": "Algoritimos",
+			"materia3": "null",
+			"bloqueios": {
+				"segunda": [
+					1
+				],
+				"terca": [],
+				"quarta": [],
+				"quinta": [
+					1
+				],
+				"sexta": [
+					10
+				]
+			}
+		},
+		"c1": {
+			"codigo": 1,
+			"nome": "Ivan Prá",
+			"materia1": "Introdução a Computação",
+			"materia2": null,
+			"materia3": null,
+			"bloqueios": {
+				"segunda": [
+					4,
+					5
+				],
+				"terca": [],
+				"quarta": [
+					1
+				],
+				"quinta": [],
+				"sexta": []
+			}
+		},
+		"c2": {
+			"codigo": 2,
+			"nome": "Alex da Silva",
+			"materia1": "Matemática",
+			"materia2": null,
+			"materia3": null,
+			"bloqueios": {
+				"segunda": [],
+				"terca": [],
+				"quarta": [],
+				"quinta": [],
+				"sexta": [
+					2,
+					4,
+					5,
+					6,
+					9,
+					10
+				]
+			}
+		},
+		"c3": {
+			"codigo": 3,
+			"nome": "Roselaine Neves Machado",
+			"materia1": "Matemática",
+			"materia2": null,
+			"materia3": null,
+			"bloqueios": { "segunda": [], "terca": [], "quarta": [], "quinta": [], "sexta": [] }
+		}
+	}
+}
