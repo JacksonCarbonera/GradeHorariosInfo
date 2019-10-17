@@ -36,11 +36,22 @@ echo "</select>;
 ";
 if (!!$_POST) {
     if (!!$_POST['nomeprofessor']) {
+       $last= end($decodifica_json["professores"]);
+       $codigo = $last["codigo"];
+       $codigo++;
         $dadosFormulario = array(
+            "codigo" => $codigo,
             "nome" => $_POST["nomeprofessor"],
             "materia1" => $_POST["materia1"],
             "materia2" => $_POST["materia2"],
             "materia3" => $_POST["materia3"],
+            "bloqueios" => array(
+                "segunda" => array(),
+				"terca" => array(),
+				"quarta" => array(),
+				"quinta" => array(),
+				"sexta" => array()
+            )
         );
         array_push($decodifica_json["professores"],$dadosFormulario);
 
@@ -51,9 +62,6 @@ if (!!$_POST) {
     $arquivo_json_alterado = json_encode($decodifica_json,JSON_UNESCAPED_UNICODE);
     file_put_contents('professores.json', $arquivo_json_alterado);
     echo "<meta HTTP-EQUIV='refresh' CONTENT='0'>";
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
 }
 
     echo "<script src='cadprofessores.js'></script>";
