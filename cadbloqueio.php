@@ -1,10 +1,15 @@
+<?php 
+include 'navmenu.php'
+?>
 <form method="POST">
-<select name="professor">
+<select name="professor" onchange="mudaProfessor(this.value)">
 		<?php 
 		$arquivo_json = file_get_contents("professores.json");
-		$decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
+        $decodifica_json = json_decode($arquivo_json, true,JSON_UNESCAPED_UNICODE);
+        echo "<script>var professoresjson = $arquivo_json;</script>";
+        echo "<option value='' disabled selected></option>";
 		for ($i=0; $i < count($decodifica_json["professores"]); $i++) { 
-			echo "<option value='{$decodifica_json['professores'][$i]['codigo']}'>{$decodifica_json['professores'][$i]['nome']}</option>";
+			echo "<option value='{$decodifica_json['professores']["c".$i]['codigo']}'>{$decodifica_json['professores']["c".$i]['nome']}</option>";
         }
         ?>
     </select>
@@ -30,7 +35,7 @@
         echo "<tr>";
         echo "<td>Periodo $i</td>";
         for ($in=0; $in < 5 ; $in++) { 
-            echo "<td><input type='checkbox' name='$dias[$in]$i'/></td>";
+            echo "<td><input id='$dias[$in]$i' type='checkbox' name='$dias[$in]$i'/></td>";
         }
         echo "</tr>";
     }
@@ -59,15 +64,16 @@ if (!!$_POST) {
         }
     }
 }
-    $decodifica_json["professores"][intval($_POST["professor"])]["bloqueios"]= $bloqueios;
+    $decodifica_json["professores"]["c".$_POST["professor"]]["bloqueios"]= $bloqueios;
     $arquivo_json_alterado = json_encode($decodifica_json,JSON_UNESCAPED_UNICODE);
     file_put_contents('professores.json', $arquivo_json_alterado);
-    echo "<pre>";
-    var_dump($decodifica_json["professores"][$_POST["professor"]]);
-    echo "</pre>";
+    echo "<meta HTTP-EQUIV='refresh' CONTENT='0'>";
+    // echo "<pre>";
+    // var_dump($decodifica_json["professores"][$_POST["professor"]]);
+    // echo "</pre>";
 }
 // echo "<pre>";
 // var_dump($_POST);
 // echo "</pre>";
-
 ?>
+<script src="cadbloqueio.js"></script>

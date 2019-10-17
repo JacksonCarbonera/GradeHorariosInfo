@@ -53,7 +53,8 @@ if (!!$_POST) {
 				"sexta" => array()
             )
         );
-        array_push($decodifica_json["professores"],$dadosFormulario);
+        $decodifica_json["professores"]["c".$codigo]=$dadosFormulario;
+        // array_push($decodifica_json["professores"],$dadosFormulario);
 
     }elseif (!!$_POST['materia']) {
         $dadosFormulario=$_POST['materia'];
