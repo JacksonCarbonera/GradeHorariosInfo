@@ -1,0 +1,132 @@
+/* MENU CURSOS */
+.selectCursos {
+	display: flex;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 15px;
+	flex-wrap: nowrap;
+
+	width: auto;
+}
+.selectCursos p {
+	margin: 0;
+}
+.field #curso,
+.field #turma {
+	height: 30px;
+	background: #d9be51;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.field #curso {
+	width: 15vw;
+	margin-right: 40px;
+}
+.afterfield::after {
+	content: '';
+	display: block;
+	position: relative;
+	top: -30px;
+	left: 15vw;
+	height: 30px;
+	width: 40px;
+	background: #decc83;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	z-index: -1;
+}
+.field .title {
+	margin: 1vw;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	color: #000000;
+}
+.field #turma {
+	width: 8vw;
+}
+.afterfield {
+	height: 0;
+}
+/* MENU PROFESSORES */
+.professores {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	display: flex;
+	flex-direction: column;
+	width: 15vw;
+}
+.professores .title {
+	width: 15vw;
+	text-align: center;
+	height: 10vh;
+	background: #decc83;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	z-index: -1;
+}
+.professores .title::after {
+	content: '';
+	width: 100%;
+	height: 65px;
+	display: block;
+	position: relative;
+	margin-top: -40px;
+	z-index: -1;
+	background: transparent url(imagens/titleAfter.png) no-repeat 80%;
+	/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+.listaProfessores {
+	height: 100vh;
+	width: 97%;
+	z-index: -2;
+	background: rgba(222, 204, 131, 0.85);
+	border: 1px solid #d9be51;
+	margin-top: -5px;
+	padding-top: 7vh;
+}
+
+/* COMPONENTE */
+.Componente {
+	margin-bottom: 10px;
+	background: white;
+	width: 95%;
+	height: 7vh;
+	display: flex;
+	margin-left: 5px;
+}
+.colorCode {
+	background: red;
+	width: 15px;
+	height: 100%;
+}
+.name {
+	font-style: normal;
+	font-weight: 200;
+	font-size: 9px;
+	height: 50%;
+	width: 100%;
+	line-height: 120%;
+	display: flex;
+	text-align: left;
+	text-indent: 5px;
+	align-items: center;
+}
+.materia {
+	width: 100%;
+	font-size: 15px;
+	line-height: 18px;
+	text-align: left;
+	text-indent: 5px;
+}
+.Componente .infos {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}

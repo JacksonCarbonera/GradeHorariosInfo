@@ -1,7 +1,7 @@
 
-<a href='cadmaterias.php'>Cadastro materias</a>
-<a href='cadprofessores.php'>Cadastro Professores</a>
-<a href='cadbloqueio.php'>Cadastro Bloqueio</a>
-<a href='index.php'>Index</a>
-<br/><br/><br/>
-
+<link rel="stylesheet" href="main.css">
+<div class="containerMenu">
+    <a href="" class="active">Grade de Horarios</a>
+    <a href="" class="navlink">Cadastro</a>
+    <a href="" class="navlink">Bloqueios</a>
+</div>
